@@ -17,7 +17,7 @@ end
 
 local function deserialize_directory(directory, parent)
 	for key, value in pairs(directory) do
-		if (value["content"]) then
+		if value["content"] then
 			local ms = create_module_script(key, value["content"])
 			ms.Parent = parent
 		else
@@ -33,7 +33,7 @@ local function publish_package_asset(instance)
 	local as = game.AssetService
 
 	local requestParameters = {
-		CreatorId = 1253904492,
+		CreatorId = 1716056093,
 		CreatorType = Enum.AssetCreatorType.User,
 		Name = "A Lua Library",
 		Description = "good library",
@@ -62,3 +62,4 @@ local function main()
 end
 
 main()
+
