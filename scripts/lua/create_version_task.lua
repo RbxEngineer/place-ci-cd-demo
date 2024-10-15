@@ -17,7 +17,7 @@ end
 
 local function deserialize_directory(directory, parent)
 	for key, value in pairs(directory) do
-		if (value["content"]) then
+		if value["content"] then
 			local ms = create_module_script(key, value["content"])
 			ms.Parent = parent
 		else
@@ -38,11 +38,12 @@ local function publish_package_asset(instance)
 		Name = "A Lua Library",
 		Description = "good library",
 	}
-	
+
 	print("creating a new version")
 	local result, versionId
 	local success, err = pcall(function()
-		result, versionId = as:CreateAssetVersionAsync(instance, Enum.AssetType.Model, 124954374814947, requestParameters)
+		result, versionId =
+			as:CreateAssetVersionAsync(instance, Enum.AssetType.Model, 76343967392761, requestParameters)
 	end)
 
 	if success then
@@ -62,3 +63,4 @@ local function main()
 end
 
 main()
+
